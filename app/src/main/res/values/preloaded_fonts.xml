@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/amaranth_bold</item>
+        <item>@font/karma_bold</item>
+        <item>@font/kavoon</item>
+        <item>@font/roboto_bold</item>
+        <item>@font/shrikhand</item>
+    </array>
+</resources>

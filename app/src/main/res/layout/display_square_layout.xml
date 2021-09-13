@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_margin="5dp"
+        android:elevation="10dp"
+        >
+        <RelativeLayout
+            android:layout_width="@dimen/sq_layout_height"
+            android:layout_height="@dimen/sq_layout_height">
+
+            <ImageView
+                android:id="@+id/bookImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/book_placeholder"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop" />
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/grdient_up_down"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/grdient_down_up"
+                android:layout_height="50dp"/>
+
+            <ImageView
+                android:id="@+id/ribbonImage"
+                android:visibility="gone"
+                android:layout_width="@dimen/display_ribbon_prime_height"
+                android:layout_height="@dimen/display_ribbon_prime_height"
+                android:src="@drawable/ic_prime"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:padding="1dp"
+                android:background="@color/overlay_var"
+                >
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Book Name"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/colorWhiteSmoke"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+
+                    />
+            </RelativeLayout>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:indeterminate="true"
+                app:trackColor="@color/loading_ma"
+                app:indicatorColor="@color/loading_mi"
+                app:trackThickness="@dimen/sq_layout_height"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

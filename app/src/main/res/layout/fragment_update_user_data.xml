@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.UpdateUserDataFragment"
+    android:clickable="true"
+    android:background="@color/overlay"
+    android:id="@+id/parent"
+    android:focusable="true">
+    <include
+        android:id="@+id/snakebarLayout"
+        android:layout_marginTop="@dimen/snake_top_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/top_snakbar_layout" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="25dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:id="@+id/profilePictureLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:padding="15dp"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update Profile Picture"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto_bold"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profileCard"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="50dp"
+                android:layout_marginTop="25dp"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_profile_placeholder"
+                        />
+
+                    <RelativeLayout
+                        android:id="@+id/progressIndicatorLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        >
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/uploadProgressbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:indeterminate="false"
+                            android:progress="0"
+                            app:trackThickness="100dp"
+                            app:indicatorColor="@color/primary_trans"
+                            app:trackColor="@color/primary_trans_10"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:textColor="@color/white"
+                            android:layout_centerInParent="true"
+                            android:text="uploading..."
+                            android:textSize="8sp"
+                            />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/pictureSelectButton"
+                app:icon="@drawable/ic_upload_file_icon_black"
+                app:iconTint="@color/brand_black"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/smoke_white"
+                android:textColor="@color/brand_black"
+                android:text="Select Picture"
+                android:layout_marginTop="15dp"
+                app:cornerRadius="15dp"
+                android:textAllCaps="false"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/uploadPictureButton"
+                app:icon="@drawable/ic_baseline_cloud_upload_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Upload Picture"
+                app:cornerRadius="15dp"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/accent"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nameOuterLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:padding="15dp"
+            android:visibility="gone"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update Name"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto_bold"
+                />
+            <com.google.android.material.textfield.TextInputLayout
+                android:inputType="text"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your Name"
+                app:boxCornerRadiusBottomEnd="@dimen/login_textbox_corner"
+                app:boxCornerRadiusBottomStart="@dimen/login_textbox_corner"
+                app:boxCornerRadiusTopEnd="@dimen/login_textbox_corner"
+                app:boxCornerRadiusTopStart="@dimen/login_textbox_corner"
+                android:layout_marginTop="15dp"
+                android:scaleY=".80"
+                android:scaleX=".80"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nameUpdateButton"
+                app:icon="@drawable/ic_baseline_name_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Update Now"
+                app:cornerRadius="15dp"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/accent"
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

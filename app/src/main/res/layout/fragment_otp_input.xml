@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.OtpInputFragment"
+    android:background="@color/overlay_var"
+    android:paddingStart="@dimen/opt_parent_padding_v"
+    android:paddingEnd="@dimen/opt_parent_padding_v"
+    android:clickable="true"
+    >
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="@dimen/corner_radius_login_card"
+        >
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressBar"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:padding="@dimen/padding_login_bg_box"
+            android:orientation="vertical"
+            >
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Enter OTP which we have sent you and hit login"
+                android:textAlignment="center"
+                android:layout_marginStart="@dimen/label_10dp_h"
+                android:layout_marginEnd="@dimen/label_10dp_h"
+                />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/otpField"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:background="@drawable/opt_bg"
+                    android:layout_marginTop="@dimen/margin_20dp_top"
+                    android:paddingStart="@dimen/label_10dp_h"
+                    android:paddingEnd="@dimen/label_10dp_h"
+                    android:hint="Enter OTP"
+
+                    />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/loginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/corner_radius_login_buttons"
+                android:text="@string/login_button"
+
+                />
+
+            <TextView
+                android:id="@+id/optTimerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/grey"
+                android:text="You can resend in 00m:59s"
+                />
+
+            <TextView
+                android:id="@+id/resendTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/primary"
+                android:text="@string/resend_otp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground"
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
